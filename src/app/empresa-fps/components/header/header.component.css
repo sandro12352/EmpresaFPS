@@ -1,0 +1,72 @@
+header {
+    background: linear-gradient(90deg, #0f0c29, #302b63, #24243e); /* Degradado estilo espacio */
+    color: white;
+  }
+
+  header a {
+    color: white;
+  }
+
+  header a:hover {
+    opacity: 0.85;
+  }
+
+  .nav-link {
+    font-weight: 500;
+     position: relative;
+     transition: color 0.3s ease;
+     font-size: 1.3rem;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 50%;
+    bottom: 0;
+    background-color: #8749e3; /* Cian neón */
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+  }
+
+  .nav-link:hover {
+    color: #00ffe7;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+
+
+  .btn-outline-light {
+    border-color: white;
+    color: white;
+  }
+
+  .btn-outline-light:hover {
+    background-color: white;
+    color: #302b63;
+  }
+
+
+  
+
+
+   .btn-consulta {
+    background: linear-gradient(135deg, #6f00ff, #00ffe7);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 10px 25px;
+    font-weight: 600;
+    box-shadow: 0 0 10px rgba(0, 255, 231, 0.5);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .btn-consulta:hover {
+    background: linear-gradient(135deg, #00ffe7, #6f00ff);
+    box-shadow: 0 0 20px rgba(111, 0, 255, 0.7);
+    transform: scale(1.05);
+  }

@@ -6,6 +6,7 @@ import { InicioPageComponent } from './pages/inicio-page/inicio-page.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AppRoutingModule } from "../app-routing.module";
 import { RouterModule } from '@angular/router';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 
@@ -13,7 +14,8 @@ import { RouterModule } from '@angular/router';
   declarations: [
     LayoutPageComponent,
     InicioPageComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   exports:[
     LayoutPageComponent,

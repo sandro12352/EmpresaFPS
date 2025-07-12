@@ -1,4 +1,4 @@
-import { isPlatformBrowser } from '@angular/common';
+import * as AOS from 'aos';
 import {
   Component,
   AfterViewInit,
@@ -8,6 +8,7 @@ import {
   ViewChild,
   ElementRef
 } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -19,19 +20,24 @@ export class AppComponent implements AfterViewInit {
   title = 'EmpresaFPS';
 
   constructor(
-    @Inject(PLATFORM_ID) private platformId: Object,
+    private router: Router,
     private renderer: Renderer2
   ) {}
 
-  async ngAfterViewInit(): Promise<void> {
-    if (isPlatformBrowser(this.platformId)) {
-      const AOS = await import('aos');
-      AOS.init();
+ 
 
-      // Esperamos al próximo ciclo para asegurarnos de que starsContainer está listo
-      setTimeout(() => this.createStars(), 0);
-    }
+  ngAfterViewInit() {
+    AOS.init();
+
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        setTimeout(() => {
+          AOS.refresh(); // Reinicializa AOS cuando cambia la ruta
+        }, 50);
+      }
+    });
   }
+
 
   createStars(): void {
     if (!this.starsContainer) return;

@@ -1,11 +1,13 @@
+
+
+
+
 .banner-fps {
     position: relative;
-    height: 100vh;
-    background-image: url('https://watermark.lovepik.com/background/20211021/large/lovepik-blue-simple-technology-information-banner-background-image_450062913.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    height: 80vh;
     overflow: hidden;
+   
+     z-index: 1;
   }
 
   .banner-overlay {
@@ -14,7 +16,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(15, 12, 41, 0.7); /* Oscurece ligeramente para mejor contraste */
+    
     z-index: 1;
   }
 
@@ -181,7 +183,8 @@
 
 
 .bg-dark-blue {
-background-color: rgba(245, 162, 162, 0.052);
+ background: linear-gradient(135deg, #555555, #b392fa53);
+
 }
 
 .bg-gradient-azul-claro {
@@ -189,9 +192,17 @@ background-color: rgba(245, 162, 162, 0.052);
 }
 
 .bg-gradient-premium {
- background-color: rgba(245, 162, 162, 0.052);
+ background:linear-gradient(135deg,#68676795,  #7f773f);
 
 }
+
+.bg-gradient-ecommerce {
+     background: linear-gradient(90deg, #3e387191, #302b63, rgba(68, 68, 121, 0.341));
+
+
+}
+
+
 
 .card-plan {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -216,3 +227,5 @@ background-color: rgba(245, 162, 162, 0.052);
   color: transparent;
  
 }
+
+

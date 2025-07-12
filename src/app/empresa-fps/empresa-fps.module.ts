@@ -7,6 +7,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { AppRoutingModule } from "../app-routing.module";
 import { RouterModule } from '@angular/router';
 import { FooterComponent } from './components/footer/footer.component';
+import { NosotrosComponent } from './pages/nosotros/nosotros.component';
+import { ServiciosComponent } from './pages/servicios/servicios.component';
+import { ContactoComponent } from './pages/contacto/contacto.component';
 
 
 
@@ -15,7 +18,10 @@ import { FooterComponent } from './components/footer/footer.component';
     LayoutPageComponent,
     InicioPageComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    NosotrosComponent,
+    ServiciosComponent,
+    ContactoComponent
   ],
   exports:[
     LayoutPageComponent,

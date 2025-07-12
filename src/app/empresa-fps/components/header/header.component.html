@@ -30,10 +30,10 @@
       <!-- Navegación centrada -->
       <div class="col-md-6">
         <nav class="nav justify-content-center gap-3">
-          <a class="nav-link" href="#">Inicio</a>
-          <a class="nav-link" href="#">Nosotros</a>
-          <a class="nav-link" href="#">Servicios</a>
-          <a class="nav-link" href="#">Contacto</a>
+           <a class="nav-link" routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Inicio</a>
+          <a class="nav-link"  routerLink="nosotros" routerLinkActive="active">Nosotros</a>
+          <a class="nav-link" routerLink="servicios" routerLinkActive="active">Servicios</a>
+          <a class="nav-link" routerLink="contacto" routerLinkActive="active">Contacto</a>
         </nav>
       </div>
 

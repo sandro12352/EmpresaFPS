@@ -22,11 +22,15 @@ export class AppComponent implements AfterViewInit {
   constructor(
     private router: Router,
     private renderer: Renderer2
-  ) {}
+    
+  ) {
+    
+  }
 
  
 
   ngAfterViewInit() {
+      this.createStars();
     AOS.init();
 
     this.router.events.subscribe((event) => {

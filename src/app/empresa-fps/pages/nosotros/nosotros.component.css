@@ -1,5 +1,66 @@
-.bg-gradient-ecommerce {
-     background: linear-gradient(90deg, #3e387191, #302b63, rgba(68, 68, 121, 0.341));
+.btn-banner {
+    background: linear-gradient(135deg, #00ffe7, #6f00ff);
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    box-shadow: 0 0 10px rgba(0, 255, 231, 0.5);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .btn-banner:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(111, 0, 255, 0.7);
+  }
 
 
+.card-seguridad {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-seguridad:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 255, 231, 0.2);
+}
+
+
+.tecnologia-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  font-weight: 500;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: inline-flex;
+  align-items: center;
+}
+
+.tecnologia-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 255, 231, 0.2);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.icono-tec {
+  width: 25px;
+  height: 25px;
+ 
+}
+
+
+.testimonial-img {
+  opacity: 0.5;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  border: 3px solid transparent;
+}
+
+.active-img {
+  opacity: 1;
+  transform: scale(1.1);
+  border-color: #ffc107; /* Amarillo */
 }

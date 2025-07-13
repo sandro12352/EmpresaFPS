@@ -1,1 +1,118 @@
-<p>contacto works!</p>
+<section class="contacto-section py-5  text-white">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-5" data-aos="fade-down">Contáctanos</h2>
+    <div class="row align-items-center">
+      
+      <!-- Imagen + texto a la izquierda -->
+      <div class="col-md-6 mb-4 mb-md-0" data-aos="fade-right">
+        
+        
+        <p class="text-white ">
+          Si tienes dudas, deseas cotizar un proyecto, o necesitas soporte personalizado, no dudes en escribirnos.<br>
+          Completa el formulario y uno de nuestros especialistas se pondrá en contacto contigo en el menor tiempo posible.
+        </p>
+        <p class="text-white  mb-3">
+          Recuerda detallar tu consulta para poder ayudarte mejor.<br> ¡Estamos aquí para apoyarte!
+        </p>
+
+        <img src="https://disenador-web-mexico.com/wp-content/uploads/2023/09/diseno-de-tienda-virtual-en-mexico-disenador-web-para-tienda-virtual-en-mexico-1024x682.jpg" 
+             alt="Contáctanos"  class="img-fluid rounded shadow mb-3">
+      </div>
+
+      <!-- Formulario a la derecha -->
+      
+      <div class="col-md-6" data-aos="fade-left">
+        <form [formGroup]="myForm" (ngSubmit)="onSave()" autocomplete="off"  class="bg-formulario p-4 rounded-4 shadow needs-validation" >
+          <div class="mb-3">
+            <label class="form-label">Nombres completos</label>
+            <input type="text" class="form-control" placeholder="Tu nombre completo" formControlName="nombres">
+            <div *ngIf="myForm.get('nombres')?.invalid && myForm.get('nombres')?.touched" class="text-danger mt-1">
+                <small *ngIf="myForm.get('nombres')?.errors?.['required']">Este campo es obligatorio.</small>
+                <small *ngIf="myForm.get('nombres')?.errors?.['minlength']">Mínimo 3 caracteres.</small>
+            </div>
+            </div>
+
+            <!-- TELÉFONO -->
+            <div class="mb-3">
+            <label class="form-label">Teléfono / WhatsApp</label>
+            <input type="tel" class="form-control" placeholder="Ej. 922777164" formControlName="telefono">
+            <div *ngIf="myForm.get('telefono')?.invalid && myForm.get('telefono')?.touched" class="text-danger mt-1">
+                <small *ngIf="myForm.get('telefono')?.errors?.['required']">El teléfono es obligatorio.</small>
+                <small *ngIf="myForm.get('telefono')?.errors?.['pattern']">Debe contener 9 dígitos numéricos.</small>
+            </div>
+            </div>
+
+            <!-- CORREO -->
+            <div class="mb-3">
+            <label class="form-label">Correo electrónico</label>
+            <input type="email" class="form-control" placeholder="Ej. correo@ejemplo.com" formControlName="correo">
+            <div *ngIf="myForm.get('correo')?.invalid && myForm.get('correo')?.touched" class="text-danger mt-1">
+                <small *ngIf="myForm.get('correo')?.errors?.['required']">El correo es obligatorio.</small>
+                <small *ngIf="myForm.get('correo')?.errors?.['email']">Debes ingresar un correo válido.</small>
+            </div>
+            </div>
+
+            <!-- TIPO DE CONSULTA -->
+            <div class="mb-3">
+            <label class="form-label">Tipo de consulta</label>
+            <select class="form-select" formControlName="tipoConsulta">
+                <option value="" disabled >Selecciona una opción</option>
+                <option value="cotizar" class="text-dark">Cotizar página</option>
+                <option value="asesoria" class="text-dark"> Asesoría</option>
+                <option value="soporte" class="text-dark"> Soporte</option>
+                <option value="otros" class="text-dark"> Otros</option>
+            </select>
+            <div *ngIf="myForm.get('tipoConsulta')?.invalid && myForm.get('tipoConsulta')?.touched" class="text-danger mt-1">
+                <small>Debes seleccionar una opción.</small>
+            </div>
+            </div>
+
+            <!-- MENSAJE -->
+            <div class="mb-3">
+            <label class="form-label">Mensaje</label>
+            <textarea rows="4" class="form-control" placeholder="Escríbenos tu consulta..." formControlName="mensaje"></textarea>
+            <div *ngIf="myForm.get('mensaje')?.invalid && myForm.get('mensaje')?.touched" class="text-danger mt-1">
+                <small>El mensaje es obligatorio.</small>
+            </div>
+            </div>
+
+          <div class="text-center">
+            <button  class="btn btn-warning fw-bold px-4 py-2 rounded-pill" type="submit" >
+              Enviar mensaje
+            </button>
+          </div>
+        </form>
+      </div>
+      
+       <!-- Modal de confirmación -->
+        <div #successModal class="modal fade " id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content text-center p-4 bg-modal rounded-4 shadow-lg">
+
+                <div class="d-flex justify-content-center mb-3">
+                    <div class="bg-success bg-gradient text-white d-flex align-items-center justify-content-center rounded-circle shadow" style="width: 100px; height: 100px;">
+                    <i class="bi bi-check2-circle fs-1"></i>
+                    </div>
+                </div>
+
+                <h4 class="fw-bold text-dark">¡Mensaje enviado!</h4>
+                <p class="mb-4 text-white">Gracias por escribirnos. <br>Estaremos en contacto muy pronto.</p>
+
+                <button type="button" class="btn btn-dark  fw-bold  py-2 rounded-pill" data-bs-dismiss="modal">
+                    Cerrar
+                </button>
+
+
+                </div>
+            </div>
+            </div>
+
+
+
+
+
+    
+
+    </div>
+  </div>
+</section>

@@ -5,12 +5,11 @@ import { LayoutPageComponent } from './pages/layout-page/layout-page.component';
 import { InicioPageComponent } from './pages/inicio-page/inicio-page.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AppRoutingModule } from "../app-routing.module";
-import { RouterModule } from '@angular/router';
 import { FooterComponent } from './components/footer/footer.component';
 import { NosotrosComponent } from './pages/nosotros/nosotros.component';
 import { ServiciosComponent } from './pages/servicios/servicios.component';
 import { ContactoComponent } from './pages/contacto/contacto.component';
-
+import {ReactiveFormsModule} from '@angular/forms'
 
 
 @NgModule({
@@ -29,8 +28,9 @@ import { ContactoComponent } from './pages/contacto/contacto.component';
   imports: [
     CommonModule,
     EmpresaFpsRoutingModule,
-    RouterModule,
-    AppRoutingModule
+    ReactiveFormsModule,
+    AppRoutingModule,
+    
 ]
 })
 export class EmpresaFPSModule { }

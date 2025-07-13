@@ -1,0 +1,32 @@
+.bg-formulario {
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contacto-section input,
+.contacto-section textarea,
+.contacto-section select {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border: none;
+}
+
+.contacto-section input::placeholder,
+.contacto-section textarea::placeholder {
+  color: #ccc;
+}
+
+.contacto-section input:focus,
+.contacto-section textarea:focus,
+.contacto-section select:focus {
+  border: 1px solid #07ffde;
+  box-shadow: none;
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+
+.bg-modal {
+    background: linear-gradient(135deg, #fdfdfdb9, #c395ffce);
+}
+

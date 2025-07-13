@@ -46,7 +46,11 @@ header {
     width: 100%;
   }
 
-
+.telefono-link:hover {
+  color: #24e7e0c5;  /* Color cian o el que prefieras */
+  text-decoration: underline;
+  cursor: pointer;
+}
 
   .btn-outline-light {
     border-color: white;

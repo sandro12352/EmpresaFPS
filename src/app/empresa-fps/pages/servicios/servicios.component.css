@@ -1,0 +1,87 @@
+.card-servicio {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-servicio:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 255, 231, 0.2);
+}
+
+
+.pilar-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pilar-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+.bg-dark-blue {
+ background: linear-gradient(135deg, #555555, #b392fa53);
+
+}
+
+.bg-gradient-azul-claro {
+  background: linear-gradient(135deg,#4cc9f0, #afbefffc,  #6329ea);
+}
+
+.bg-gradient-premium {
+ background:linear-gradient(135deg,#68676795,  #7f773f);
+
+}
+
+.bg-gradient-ecommerce {
+     background: linear-gradient(90deg, #3e387191, #302b63, rgba(68, 68, 121, 0.341));
+
+
+}
+
+
+
+.card-plan {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+}
+
+.card-plan:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.card-plan ul li {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.titulo-gradiente {
+  background: linear-gradient(135deg, #00ffe7, #6f00ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+ 
+}
+
+.btn-banner {
+    background: linear-gradient(135deg, #00ffe7, #6f00ff);
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    box-shadow: 0 0 10px rgba(0, 255, 231, 0.5);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .btn-banner:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(111, 0, 255, 0.7);
+  }

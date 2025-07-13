@@ -9,7 +9,8 @@ import { EnviarEmailService } from '../../services/enviar-email.service';
 })
 export class ContactoComponent {
   @ViewChild('successModal') successModal!: ElementRef;
-
+  public isSending = false;
+  public isSent = false;
   public myForm: FormGroup;
 
   constructor(private fb: FormBuilder,private serviceEnviarEmail:EnviarEmailService) {
@@ -36,14 +37,18 @@ export class ContactoComponent {
     return;
   }
 
-  this.serviceEnviarEmail.enviarCorreo(this.myForm.value)
-    .then(() => {
-      this.showModal();  // Mostrar modal solo si se envió correctamente
-      this.myForm.reset();
-    })
-    .catch((error) => {
-      console.error('Error enviando correo:', error);
-      // Aquí puedes mostrar un mensaje de error si deseas
-    });
+  this.isSending = true;
+  this.isSent = false;
+  this.showModal(); // Abre el modal con el spinner
+
+  this.serviceEnviarEmail.enviarCorreo(this.myForm.value).then(() => {
+    this.isSending = false;
+    this.isSent = true;
+    this.myForm.reset();
+  }).catch(error => {
+    this.isSending = false;
+    console.error('Error al enviar', error);
+    // Aquí puedes mostrar un mensaje de error en el modal si deseas
+  });
 }
 }

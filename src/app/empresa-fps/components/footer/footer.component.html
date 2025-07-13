@@ -13,8 +13,8 @@
         <h5 class="fw-semibold">Enlaces rápidos</h5>
         <ul class="list-unstyled">
           <li><a routerLink="" class="text-white text-decoration-none">Inicio</a></li>
-          <li><a href="#planes" class="text-white text-decoration-none">Planes</a></li>
-          <li><a href="#proyectos" class="text-white text-decoration-none">Proyectos</a></li>
+          <li><a [routerLink]="['']" fragment="planes" class="text-white text-decoration-none">Planes</a></li>
+          <li><a [routerLink]="['']" fragment="proyectos" class="text-white text-decoration-none">Proyectos</a></li>
           <li><a routerLink="contacto" class="text-white text-decoration-none">Contacto</a></li>
         </ul>
       </div>
@@ -28,8 +28,6 @@
         <!-- Redes sociales -->
         <div class="d-flex gap-3 mt-3">
           <a href="#" class="text-white fs-5"><i class="bi bi-facebook"></i></a>
-          <a href="#" class="text-white fs-5"><i class="bi bi-instagram"></i></a>
-          <a href="#" class="text-white fs-5"><i class="bi bi-tiktok"></i></a>
           <a href="#" class="text-white fs-5"><i class="bi bi-whatsapp"></i></a>
         </div>
       </div>

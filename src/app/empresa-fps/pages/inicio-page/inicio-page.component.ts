@@ -5,22 +5,39 @@ import {
   PLATFORM_ID,
   ViewChild,
   ElementRef,
-  Renderer2
+  Renderer2,
+  AfterViewInit
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-inicio-page',
   templateUrl: './inicio-page.component.html',
   styleUrls: ['./inicio-page.component.css']
 })
-export class InicioPageComponent implements OnInit {
+export class InicioPageComponent implements OnInit,AfterViewInit  {
   @ViewChild('starsContainer', { static: false }) starsContainer!: ElementRef;
 
   constructor(
     private renderer: Renderer2,
-    @Inject(PLATFORM_ID) private platformId: Object
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private route: ActivatedRoute
   ) {}
+
+
+
+  ngAfterViewInit(): void {
+    this.route.fragment.subscribe(fragment => {
+      if (fragment) {
+        const element = document.getElementById(fragment);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    });
+  
+  }
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {

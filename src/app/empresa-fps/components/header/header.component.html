@@ -1,11 +1,11 @@
 <header >
-  
+    
 
   <!-- FILA INFERIOR: LOGO + NAV + BOTÓN -->
-  <div class="container py-3">
+  <div class="container d-md-block d-none py-3">
     <div class="row align-items-center">
       <!-- Logo a la izquierda -->
-      <div class="col-md-3 text-center text-md-start">
+      <div class="col-md-3 text-center text-md-start" routerLink="">
         <img src="logo.png" alt="Logo" class="img-fluid" width="170" style="max-height: 80px;">
       </div>
 
@@ -27,4 +27,48 @@
       </div>
     </div>
   </div>
+
+ <div class="d-flex d-md-none justify-content-between align-items-center px-3 py-2">
+
+  <!-- Botón menú hamburguesa a la izquierda -->
+  <button class="navbar-toggler border-0 bg-transparent" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu">
+    <i class="bi bi-list fs-1"></i>
+  </button>
+
+  <!-- Logo centrado -->
+  <div routerLink="">
+    <img src="logo.png" alt="Logo" class="img-fluid" width="80" style="max-height: 80px;">
+  </div>
+
+  <!-- Botón WhatsApp a la derecha -->
+  <div>
+    <a href="https://wa.me/51999999999" target="_blank" class="text-white text-decoration-none fs-4">
+      <i class="bi bi-whatsapp"></i>
+    </a>
+  </div>
+
+</div>
+
+<!-- OFFCANVAS -->
+<div class="offcanvas offcanvas-start bg-dark text-white" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+  <div class="offcanvas-header">
+    <h5 id="offcanvasMenuLabel">Menú</h5>
+    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <nav class="nav flex-column gap-2">
+     <a class="nav-link text-white" routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" data-bs-dismiss="offcanvas">Inicio</a>
+    <a class="nav-link text-white" routerLink="/nosotros" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" data-bs-dismiss="offcanvas">Nosotros</a>
+    <a class="nav-link text-white" routerLink="/servicios" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" data-bs-dismiss="offcanvas">Servicios</a>
+    <a class="nav-link text-white" routerLink="/contacto" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" data-bs-dismiss="offcanvas">Contacto</a>
+
+    </nav>
+  </div>
+</div>
+
+
+   
+
+
+
 </header>

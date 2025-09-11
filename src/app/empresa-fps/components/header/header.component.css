@@ -11,6 +11,12 @@ header {
     opacity: 0.85;
   }
 
+  header .logo {
+  max-width: 300px;   /* Ajusta el tamaño deseado */
+  height: auto;       /* Mantiene la proporción */
+  object-fit: contain; 
+}
+
 
   .nav-link.active {
   color: #00ffe7;; /* Amarillo (puedes cambiarlo) */

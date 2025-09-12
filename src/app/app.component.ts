@@ -4,9 +4,14 @@ import {
   AfterViewInit,
   Renderer2,
   ViewChild,
-  ElementRef
+  ElementRef,
+  Inject,
+  PLATFORM_ID
 } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { Title, Meta } from '@angular/platform-browser';
+import { filter, map, mergeMap } from 'rxjs';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -18,26 +23,54 @@ export class AppComponent implements AfterViewInit {
   title = 'EmpresaFPS';
 
   constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
     private router: Router,
-    private renderer: Renderer2
-    
+    private renderer: Renderer2,
+    private activatedRoute: ActivatedRoute,
+    private titleService: Title,
+    private metaService: Meta
   ) {
     
   }
 
  
 
-  ngAfterViewInit() {
-      this.createCircuitIcons();
-    AOS.init();
+ ngAfterViewInit() {
+    this.createCircuitIcons();
+    if (isPlatformBrowser(this.platformId)) {
+       AOS.init();
+    }
+   
 
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
+    this.router.events
+      .pipe(
+        filter((event) => event instanceof NavigationEnd),
+        map(() => {
+          let route = this.activatedRoute.firstChild;
+          while (route?.firstChild) {
+            route = route.firstChild;
+          }
+          return route;
+        }),
+        mergeMap((route) => route?.data ?? [])
+      )
+      .subscribe((data) => {
+        // 🔹 Reinicializa AOS en cada cambio de ruta
         setTimeout(() => {
-          AOS.refresh(); // Reinicializa AOS cuando cambia la ruta
+          AOS.refresh();
         }, 50);
-      }
-    });
+
+        // 🔹 Actualiza Title y Meta Description
+        if (data['title']) {
+          this.titleService.setTitle(data['title']);
+        }
+        if (data['description']) {
+          this.metaService.updateTag({
+            name: 'description',
+            content: data['description']
+          });
+        }
+      });
   }
 
 
